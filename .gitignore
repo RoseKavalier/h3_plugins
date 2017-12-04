@@ -1,0 +1,11 @@
+
+*.tlog
+*.log
+*.filters
+*.vcxproj
+*.xml
+*.obj
+*.pdb
+*.sdf
+*.suo
+*.user

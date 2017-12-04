@@ -1,0 +1,125 @@
+#ifndef TOWN_DEPENDENCIES_H
+#define TOWN_DEPENDENCIES_H
+
+typedef unsigned long long uint64;
+
+enum TOWN_ID {
+	/* 0x00 */	TOWN_ID_CASTLE,
+	/* 0x01 */	TOWN_ID_RAMPART,
+	/* 0x02 */	TOWN_ID_TOWER,
+	/* 0x03 */	TOWN_ID_INFERNO,
+	/* 0x04 */	TOWN_ID_NECROPOLIS,
+	/* 0x05 */	TOWN_ID_DUNGEON,
+	/* 0x06 */	TOWN_ID_STRONGHOLD,
+	/* 0x07 */	TOWN_ID_FORTRESS,
+	/* 0x08 */	TOWN_ID_CONFLUX,
+	/* 0x09 */	TOWN_ID_COVE
+};
+
+enum BUILDING_ID {
+	/* 0x00 */	BLD_ID_MAGE1,
+	/* 0x01 */	BLD_ID_MAGE2,
+	/* 0x02 */	BLD_ID_MAGE3,
+	/* 0x03 */	BLD_ID_MAGE4,
+	/* 0x04 */	BLD_ID_MAGE5,
+	/* 0x05 */	BLD_ID_TAVERN,
+	/* 0x06 */	BLD_ID_WHARF,
+	/* 0x07 */	BLD_ID_FORT,
+	/* 0x08 */	BLD_ID_CITADEL,
+	/* 0x09 */	BLD_ID_CASTLE,
+	/* 0x0A */	BLD_ID_VILAGE_HALL,
+	/* 0x0B */	BLD_ID_TOWN_HALL,
+	/* 0x0C */	BLD_ID_CITY_HALL,
+	/* 0x0D */	BLD_ID_CAPITOL,
+	/* 0x0E */	BLD_ID_MARKET,
+	/* 0x0F */	BLD_ID_RESOURCE_SILO,
+	/* 0x10 */	BLD_ID_BLACKSMITH,
+	/* 0x11 */	BLD_ID_SPEC17,
+	/* 0x12 */	BLD_ID_HORDE1,
+	/* 0x13 */	BLD_ID_HORDE1U,
+	/* 0x14 */	BLD_ID_WHARF2,
+	/* 0x15 */	BLD_ID_SPEC21,
+	/* 0x16 */	BLD_ID_SPEC22,
+	/* 0x17 */	BLD_ID_SPEC23,
+	/* 0x18 */	BLD_ID_HORDE2,
+	/* 0x19 */	BLD_ID_HORDE2U,
+	/* 0x1A */	BLD_ID_GRAIL,
+	/* 0x1B */	BLD_ID_DECOR27,
+	/* 0x1C */	BLD_ID_DECOR28,
+	/* 0x1D */	BLD_ID_DECOR29,
+	/* 0x1E */	BLD_ID_DWELL1,
+	/* 0x1F */	BLD_ID_DWELL2,
+	/* 0x20 */	BLD_ID_DWELL3,
+	/* 0x21 */	BLD_ID_DWELL4,
+	/* 0x22 */	BLD_ID_DWELL5,
+	/* 0x23 */	BLD_ID_DWELL6,
+	/* 0x24 */	BLD_ID_DWELL7,
+	/* 0x25 */	BLD_ID_DWELL1U,
+	/* 0x26 */	BLD_ID_DWELL2U,
+	/* 0x27 */	BLD_ID_DWELL3U,
+	/* 0x28 */	BLD_ID_DWELL4U,
+	/* 0x29 */	BLD_ID_DWELL5U,
+	/* 0x2A */	BLD_ID_DWELL6U,
+	/* 0x2B */	BLD_ID_DWELL7U
+};
+
+#define NO_REQ 0
+#define BLD_REQ_MAGE1 0x01
+#define BLD_REQ_MAGE2 0x02
+#define BLD_REQ_MAGE3 0x04
+#define BLD_REQ_MAGE4 0x08
+#define BLD_REQ_MAGE5 0x10
+#define BLD_REQ_TAVERN 0x20
+#define BLD_REQ_WHARF 0x40
+#define BLD_REQ_FORT 0x80
+#define BLD_REQ_CITADEL 0x100
+#define BLD_REQ_CASTLE 0x200
+#define BLD_REQ_VILAGE_HALL 0x400
+#define BLD_REQ_TOWN_HALL 0x800
+#define BLD_REQ_CITY_HALL 0x1000
+#define BLD_REQ_CAPITOL 0x2000
+#define BLD_REQ_MARKET 0x4000
+#define BLD_REQ_RESOURCE_SILO 0x8000
+#define BLD_REQ_BLACKSMITH 0x10000
+#define BLD_REQ_SPEC17 0x20000
+#define BLD_REQ_HORDE1 0x40000
+#define BLD_REQ_HORDE1U 0x80000
+#define BLD_REQ_WHARF2 0x100000
+#define BLD_REQ_SPEC21 0x200000
+#define BLD_REQ_SPEC22 0x400000
+#define BLD_REQ_SPEC23 0x800000
+#define BLD_REQ_HORDE2 0x1000000
+#define BLD_REQ_HORDE2U 0x2000000
+#define BLD_REQ_GRAIL 0x4000000
+#define BLD_REQ_DECOR27 0x8000000
+#define BLD_REQ_DECOR28 0x10000000
+#define BLD_REQ_DECOR29 0x20000000
+#define BLD_REQ_DWELL1 0x40000000
+#define BLD_REQ_DWELL2 0x80000000
+#define BLD_REQ_DWELL3 0x100000000
+#define BLD_REQ_DWELL4 0x200000000
+#define BLD_REQ_DWELL5 0x400000000
+#define BLD_REQ_DWELL6 0x800000000
+#define BLD_REQ_DWELL7 0x1000000000
+#define BLD_REQ_DWELL1U 0x2000000000
+#define BLD_REQ_DWELL2U 0x4000000000
+#define BLD_REQ_DWELL3U 0x8000000000
+#define BLD_REQ_DWELL4U 0x10000000000
+#define BLD_REQ_DWELL5U 0x20000000000
+#define BLD_REQ_DWELL6U 0x40000000000
+#define BLD_REQ_DWELL7U 0x80000000000
+
+#pragma pack(push, 1)
+
+struct _TownDependencies_
+{
+	uint64 dependency[9][44];
+
+	inline void ChangeDependency(int town, int building, uint64 dependency) { this->dependency[town][building] = dependency; }
+ };
+
+#define o_TownDependencies (*(_TownDependencies_**)0x5D6018)
+
+#pragma pack(pop)
+
+#endif
