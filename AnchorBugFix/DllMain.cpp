@@ -138,64 +138,64 @@ int __stdcall RepositionAnchorDef(LoHook *h, HookContext *c)
 		int obstacle_id = ((int)obstacle->data - (int)o_DefObstacleInfo) / sizeof(_DefObstacleInfo_);
 		switch (obstacle_id)
 		{
-		case obbdt01: // offset at 1 exists
-		case obdts04:
-		case obdts15:
-		case obdsm02:
-		case obdss17:
-		case obgrs01:
-		case obgrs02:
-		case obsns02:
-		case obsns05:
-		case obsns06:
-		case obrgs03:
-		case obbhs02:
-		case obbhs11a:
-		case obbhs12b:
-		case obhgs02:
-		case obefs03:
-		case obefs04:
-		case obcfs02:
-		case oblps03:
-		case obffs03:
-		case obrls03:
-		case obmcs01:
+		case LocalObstacles::obbdt01: // offset at 1 exists
+		case LocalObstacles::obdts04:
+		case LocalObstacles::obdts15:
+		case LocalObstacles::obdsm02:
+		case LocalObstacles::obdss17:
+		case LocalObstacles::obgrs01:
+		case LocalObstacles::obgrs02:
+		case LocalObstacles::obsns02:
+		case LocalObstacles::obsns05:
+		case LocalObstacles::obsns06:
+		case LocalObstacles::obrgs03:
+		case LocalObstacles::obbhs02:
+		case LocalObstacles::obbhs11a:
+		case LocalObstacles::obbhs12b:
+		case LocalObstacles::obhgs02:
+		case LocalObstacles::obefs03:
+		case LocalObstacles::obefs04:
+		case LocalObstacles::obcfs02:
+		case LocalObstacles::oblps03:
+		case LocalObstacles::obffs03:
+		case LocalObstacles::obrls03:
+		case LocalObstacles::obmcs01:
 			c->eax -= BATTLEHEX_WIDTH; // move X left
 			break;
-		case obdts14: // 2, -15, -16
-		case obsns09: // 2;3;4;5;-13;-14;-15;-16
+		case LocalObstacles::obdts14: // 2, -15, -16
+		case LocalObstacles::obsns09: // 2;3;4;5;-13;-14;-15;-16
 			c->eax -= 2 * BATTLEHEX_WIDTH;
 			break;
-		case obsns10: // 3;-13;-14;-15;-33;-49;-66
+		case LocalObstacles::obsns10: // 3;-13;-14;-15;-33;-49;-66
 			c->eax -= 3 * BATTLEHEX_WIDTH;
 			break;
-		case obsws02: // -10;-11;-12;-13;-14;-15;-16
+		case LocalObstacles::obsws02: // -10;-11;-12;-13;-14;-15;-16
 			c->eax -= (int)(6.5 * BATTLEHEX_WIDTH); // move by 6.5 hex left  (-16 - -10 - 0.5)
 			c->edx += BATTLEHEX_WIDTH; // lower row by 1
 			break;
-		case obsws11b: // -13;-14;-15;-16;-30;-31;-32;-33
-		case oblvs03: // -13;-14;-15;-30;-31;-32;-33
-		case oblvs17: // -13;-14;-15;-16;-30;-31
-		case oblvs22: // -13;-14;-15;-16;-31;-32;-33
+		case LocalObstacles::obsws11b: // -13;-14;-15;-16;-30;-31;-32;-33
+		case LocalObstacles::oblvs03: // -13;-14;-15;-30;-31;-32;-33
+		case LocalObstacles::oblvs17: // -13;-14;-15;-16;-30;-31
+		case LocalObstacles::oblvs22: // -13;-14;-15;-16;-31;-32;-33
 			c->eax -= (int)(3.5 * BATTLEHEX_WIDTH); // move by 3.5 hex left (-16 - -13 - 0.5)
 			c->edx += BATTLEHEX_WIDTH; // lower row by 1
 			break;
-		case obrgs02: // -14;-15;-16;-32;-33
-		case oblvs01: // -14;-32;-33
-		case oblvs09: // -14;-15;-32;-33;-49;-50
+		case LocalObstacles::obrgs02: // -14;-15;-16;-32;-33
+		case LocalObstacles::oblvs01: // -14;-32;-33
+		case LocalObstacles::oblvs09: // -14;-15;-32;-33;-49;-50
 			c->eax -= (int)(2.5 * BATTLEHEX_WIDTH); // move by 2.5 hex left (-16 - -14 - 0.5)
 			c->edx += BATTLEHEX_WIDTH; // lower row by 1
 			break;
-		case obdrk01: // -15, -16
-		case obdsm01: // -15;-16;-32;-33;-48;-49
-		case obrgs05: // -15;-16;-32
-		case obbts04: // -15;-16;-33
+		case LocalObstacles::obdrk01: // -15, -16
+		case LocalObstacles::obdsm01: // -15;-16;-32;-33;-48;-49
+		case LocalObstacles::obrgs05: // -15;-16;-32
+		case LocalObstacles::obbts04: // -15;-16;-33
 			c->eax -= (int)(1.5 * BATTLEHEX_WIDTH); // move by 1.5 hex left (-16 - -15 - 0.5)
 			c->edx += BATTLEHEX_WIDTH; // lower row by 1
 			break;
-		case obsws13a: // -16;-17;-31;-32;-33;-34
-		case obdrk03: // -16
-		case obrgs04: // -16;-32;-33
+		case LocalObstacles::obsws13a: // -16;-17;-31;-32;-33;-34
+		case LocalObstacles::obdrk03: // -16
+		case LocalObstacles::obrgs04: // -16;-32;-33
 			c->eax -= (int)(0.5 * BATTLEHEX_WIDTH); // move by 0.5 hex left (-16 - -16 - 0.5)
 			c->edx += BATTLEHEX_WIDTH; // lower row by 1
 			break;
