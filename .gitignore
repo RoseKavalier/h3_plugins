@@ -9,3 +9,16 @@
 *.sdf
 *.suo
 *.user
+includes/base.h
+includes/era.cpp
+includes/era.h
+includes/heroes.cpp
+includes/heroes.h
+includes/homm3.h
+includes/HoMM3_Base.h
+includes/HoMM3_Extra.h
+includes/HoMM3_GUI.cpp
+includes/HoMM3_GUI.h
+includes/HoMM3_ids.h
+includes/HoMM3_Res.cpp
+includes/HoMM3_Res.h
