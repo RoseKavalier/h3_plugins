@@ -22,3 +22,6 @@ includes/HoMM3_GUI.h
 includes/HoMM3_ids.h
 includes/HoMM3_Res.cpp
 includes/HoMM3_Res.h
+*.opensdf
+*.sln
+*.zip
