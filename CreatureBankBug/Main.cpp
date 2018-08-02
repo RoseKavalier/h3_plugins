@@ -1,4 +1,4 @@
-#include "includes/homm3.h"
+#include "../includes/homm3.h"
 
 Patcher *_P;
 PatcherInstance *_PI;
