@@ -131,9 +131,9 @@ int __stdcall RepositionAnchorDef(LoHook *h, HookContext *c)
 {
 	_BattleHex_ *hex;
 	if (c->return_address == 0x49452B) // handles the different placement of the hook
-		hex = (_BattleHex_*)(c->edi - 0x1C); // original case
+		hex = (_BattleHex_*)(c->edi - 0x1C); // this is the new, missing, case
 	else
-		hex = (_BattleHex_*)(c->edi - 0x14); // this is the new, missing, case
+		hex = (_BattleHex_*)(c->edi - 0x14); // original case
 
 	_BattleMgr_ *combat = (_BattleMgr_*)c->esi;
 	if (hex->Flags == 3) // anchor & local obstacle
