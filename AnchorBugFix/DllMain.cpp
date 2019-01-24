@@ -129,7 +129,12 @@ void __stdcall FixObstacleAnchorBug(HiHook *h, _BattleMgr_ *combat)
 
 int __stdcall RepositionAnchorDef(LoHook *h, HookContext *c)
 {
-	_BattleHex_ *hex = (_BattleHex_*)(c->edi - 0x14);
+	_BattleHex_ *hex;
+	if (c->return_address == 0x49452B) // handles the different placement of the hook
+		hex = (_BattleHex_*)(c->edi - 0x1C); // original case
+	else
+		hex = (_BattleHex_*)(c->edi - 0x14); // this is the new, missing, case
+
 	_BattleMgr_ *combat = (_BattleMgr_*)c->esi;
 	if (hex->Flags == 3) // anchor & local obstacle
 	{
@@ -220,6 +225,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 			_PI = _P->CreateInstance("AnchorBugFix");
 			_PI->WriteHiHook(0x465E70, SPLICE_, EXTENDED_, THISCALL_, FixObstacleAnchorBug);
 			_PI->WriteLoHook(0x4941FE, RepositionAnchorDef);
+			_PI->WriteLoHook(0x494523, RepositionAnchorDef); // this hook was missing for some special terrains
 		}
 		break;
 
